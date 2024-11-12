@@ -120,4 +120,90 @@ public class TestSorter {
     ArrayUtils.permute(original);
     assertSorts(expected, original, intSorter);
   } // permutedIntegers
+
+  /**
+   * Ensures that an array with the first half sorted gets sorted correctly.
+   * @author Lily
+   */
+  @Test
+  public void firstHalfSortedTest() {
+    if (null == stringSorter) {
+      return;
+    } // if
+    String[] original = { "antelope", "cow", "ferret", "whale", "zebra", "rabbit" };
+    String[] expected = { "antelope", "cow", "ferret", "rabbit", "whale", "zebra" };
+    assertSorts(expected, original, stringSorter);
+  } // firstHalfSortedTest()
+
+  /**
+   * Ensures that array with the second half sorted gets sorted correctly.
+   * @author Lily
+   */
+  @Test
+  public void secondHalfSortedTest() {
+    if (null == stringSorter) {
+      return;
+    } // if
+    String[] original = { "ferret", "antelope", "cow", "rabbit", "whale", "zebra" };
+    String[] expected = { "antelope", "cow", "ferret", "rabbit", "whale", "zebra" };
+    assertSorts(expected, original, stringSorter);
+  } // secondHalfSortedTest()
+
+  /**
+   * Ensures that an array with each pair of elements swapped gets sorted correctly.
+   *   ie: B A D C F E
+   * @author Lily
+   */
+  @Test
+  public void swappedPairsTest() {
+    if (null == stringSorter) {
+      return;
+    } // if
+    String[] original = { "cow", "antelope", "rabbit", "ferret", "zebra", "whale" };
+    String[] expected = { "antelope", "cow", "ferret", "rabbit", "whale", "zebra" };
+    assertSorts(expected, original, stringSorter);
+  } // swappedPairsTest()
+
+  /**
+   * Ensures that an otherwise sorted array with the first and last elements 
+   *   swapped gets sorted correctly.
+   * @author Lily
+   */
+  @Test
+  public void firstLastSwapTest() {
+    if (null == stringSorter) {
+      return;
+    } // if
+    String[] original = { "zebra", "cow", "ferret", "rabbit", "whale", "antelope" };
+    String[] expected = { "antelope", "cow", "ferret", "rabbit", "whale", "zebra" };
+    assertSorts(expected, original, stringSorter);
+  } // firstLastSwapTest()
+
+  /**
+   * Ensures that an array of one element gets sorted correctly.
+   * @author Lily
+   */
+  @Test
+  public void oneElementTest() {
+    if (null == stringSorter) {
+      return;
+    } // if
+    String[] original = { "antelope"};
+    String[] expected = { "antelope"};
+    assertSorts(expected, original, stringSorter);
+  } // oneElementTest()
+
+    /**
+   * Ensures that an array with an odd number of element gets sorted correctly.
+   * @author Lily
+   */
+  @Test
+  public void oddElementsTest() {
+    if (null == stringSorter) {
+      return;
+    } // if
+    String[] original = { "ferret", "cow", "zebra", "antelope", "whale", "horse", "rabbit" };
+    String[] expected = { "antelope", "cow", "ferret", "horse", "rabbit", "whale", "zebra" };
+    assertSorts(expected, original, stringSorter);
+  } // oddElementTest()
 } // class TestSorter

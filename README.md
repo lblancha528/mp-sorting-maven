@@ -9,7 +9,7 @@ Authors
 
 Acknowledgements
 
-* _Forthcoming_.
+* 11/11/24: Eboard 18, insertion sort theory
 
 This code may be found at <https://github.com/lblancha528/mp-sorting-maven>. The original code may be found at <https://github.com/Grinnell-CSC207/mp-sorting-maven>.
 
