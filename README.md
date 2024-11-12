@@ -26,6 +26,7 @@ _This section is optional_
 
 **Notes to Self**
 * Merge sort loops infinitely. Identical to example code.
+* Merge sort cannot be done in place. Need to create a helper array??
 * Work log: 
     11/11/24    5-6:30pm       1.5hrs
                 9-10:30pm      1.5hrs
