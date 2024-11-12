@@ -23,3 +23,9 @@ Notes on using Copilot (or other AI)
 ------------------------------------
 
 _This section is optional_
+
+**Notes to Self**
+* Merge sort loops infinitely. Identical to example code.
+* Work log: 
+    11/11/24    5-6:30pm       1.5hrs
+                9-10:30pm      1.5hrs
