@@ -56,10 +56,13 @@ public class SelectionSorter<T> implements Sorter<T> {
       for (int j = i + 1; j < values.length; j++) {
         // if found an equals, stop and swap
         // if found a smaller, keep looking for more smaller!!!
-        if (order.compare(values[i], values[j]) >= 0) {
+        if (order.compare(values[i], values[j]) == 0) {
+          // if equal, stop and swap
+          smallest = j;
+          break;
+        } else if (order.compare(values[smallest], values[j]) > 0) {
           // when you find one that is smaller/ equal to that element
           smallest = j; // save its index
-          break; // move on
         } // if
       } // for
       T first = values[i];

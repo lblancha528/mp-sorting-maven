@@ -9,7 +9,10 @@ Authors
 
 Acknowledgements
 
-* 11/11/24: Eboard 18, insertion sort theory
+* 11/11/24: Eboard 18, insertion sort theory, merge sort explanation
+*           Eboard 17, selection short analysis
+*           <https://www.geeksforgeeks.org/in-place-merge-sort/> for how to merge sort in place.
+*           Evening tutors: Caelan
 
 This code may be found at <https://github.com/lblancha528/mp-sorting-maven>. The original code may be found at <https://github.com/Grinnell-CSC207/mp-sorting-maven>.
 
