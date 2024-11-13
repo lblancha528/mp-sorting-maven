@@ -13,6 +13,7 @@ Acknowledgements
 *           Eboard 17, selection short analysis
 *           <https://www.geeksforgeeks.org/in-place-merge-sort/> for how to merge sort in place.
 *           Evening tutors: Caelan
+* 11/13/24: <https://www.geeksforgeeks.org/merge-sort/#implementation-of-merge-sort> attempt two at merge sort.
 
 This code may be found at <https://github.com/lblancha528/mp-sorting-maven>. The original code may be found at <https://github.com/Grinnell-CSC207/mp-sorting-maven>.
 
@@ -30,3 +31,4 @@ _This section is optional_
 * Work log: 
     11/11/24    5-6:30pm       1.5hrs
                 9-10:30pm      1.5hrs
+    11/13/24    4:30-
