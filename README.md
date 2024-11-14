@@ -14,6 +14,7 @@ Acknowledgements
 *           <https://www.geeksforgeeks.org/in-place-merge-sort/> for how to merge sort in place.
 *           Evening tutors: Caelan
 * 11/13/24: <https://www.geeksforgeeks.org/merge-sort/#implementation-of-merge-sort> attempt two at merge sort.
+*           MP7, partners Tiffany Yan and Natalie Nardone, on how to generate a random number.
 
 This code may be found at <https://github.com/lblancha528/mp-sorting-maven>. The original code may be found at <https://github.com/Grinnell-CSC207/mp-sorting-maven>.
 
@@ -26,9 +27,8 @@ Notes on using Copilot (or other AI)
 _This section is optional_
 
 **Notes to Self**
-* Merge sort loops infinitely. Identical to example code.
-* Merge sort cannot be done in place. Need to create a helper array??
+* Quicksort index out of bounds when swapping?
 * Work log: 
-    11/11/24    5-6:30pm       1.5hrs
-                9-10:30pm      1.5hrs
-    11/13/24    4:30-
+    11/11/24    5:00-6:30pm         1.5hrs
+                9:00-10:30pm        1.5hrs
+    11/13/24    4:30-6:00pm         1.5hrs
