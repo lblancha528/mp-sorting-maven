@@ -48,27 +48,38 @@ public class SelectionSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    int smallest = 0; // index of smallest element found
-
-    // i = index of next unsorted element
+    // index where the next 'sorted' element will go
+    int sorted = 0;
     for (int i = 0; i < values.length; i++) {
-      smallest = i;
-      for (int j = i + 1; j < values.length; j++) {
-        // if found an equals, stop and swap
-        // if found a smaller, keep looking for more smaller!!!
-        if (order.compare(values[i], values[j]) == 0) {
-          // if equal, stop and swap
-          smallest = j;
-          break;
-        } else if (order.compare(values[smallest], values[j]) > 0) {
-          // when you find one that is smaller/ equal to that element
-          smallest = j; // save its index
-        } // if
-      } // for
-      T first = values[i];
+      int smallest = findSmallest(values, sorted);
+      T first = values[sorted];
       T second = values[smallest];
-      values[i] = second;
+      values[sorted] = second;
       values[smallest] = first;
     } // for
   } // sort(T[])
+
+  /**
+  * Finds the next smallest element in the array.
+  * @param T[] the array to be searched
+  * @param int the 
+  * @return int index of smallest element
+  */
+  public int findSmallest(T[] values, int start) {
+    int smallest = 0; // index of smallest element found
+
+    for (int j = i + 1; j < values.length; j++) {
+      if (order.compare(values[i], values[j]) == 0) {
+        // if equal, stop and return
+        smallest = j;
+        return smallest;
+      } else if (order.compare(values[smallest], values[j]) > 0) {
+        // when you find one that is smaller/ equal to that element
+        smallest = j; // save its index
+      } // if
+    } // for
+
+    return smallest;
+  } // findSmallest(T[], int)
+  
 } // class SelectionSorter
