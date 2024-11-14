@@ -49,25 +49,43 @@ public class Quicksorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    quickHelper(values, 0, values.length);
+    quickHelper(values, 0, values.length - 1);
   } // sort(T[])
 
   /**
    * Does the recursion.
+   * 
    * @param T[] the array to be sorted
    * @param int the lower bound
    * @param int the upper bound
    */
-  public void quickHelper(T[]values, int lower, int upper) {
+  public void quickHelper(T[] values, int lower, int upper) {
+    if (lower < upper && lower > -1 && upper > -1) {
+      int bigger = sort(values, lower, upper);
+
+      quickHelper(values, lower, bigger);
+      quickHelper(values, bigger + 1, upper);
+    } // if bounds are valid
+  } // quickHelper(T[], int, int)
+
+  /**
+   * Does the sorting.
+   * 
+   * @param T[] the array
+   * @param int lower bound
+   * @param int upper bound
+   * @return the last index of the smaller range
+   */
+  public int sort(T[] values, int lower, int upper) {
     int smaller = lower; // next index to place a smaller element at
-    int bigger = upper - 1; // next index to place a bigger element at
+    int bigger = upper; // next index to place a bigger element at
     int current = lower; // index of next unsorted element
 
     Random rand = new Random();
-    int randomNum = rand.nextInt(upper);
-    T pivot = values[randomNum]; // value of the pivot
+    int randomNum = rand.nextInt(upper - lower);
+    T pivot = values[randomNum + lower]; // value of the pivot
 
-    while (current < bigger) {
+    while (current <= bigger) {
       if (order.compare(values[current], pivot) < 0) {
         // if element is smaller than pivot, put in smaller section
         T first = values[current];
@@ -89,8 +107,6 @@ public class Quicksorter<T> implements Sorter<T> {
         current++;
       } // if
     } // while
-
-    quickHelper(values, lower, smaller);
-    quickHelper(values, bigger + 1, upper);
-  } // quickHelper(T[], int, int)
+    return bigger;
+  }
 } // class Quicksorter

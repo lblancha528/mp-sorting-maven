@@ -32,3 +32,4 @@ _This section is optional_
     11/11/24    5:00-6:30pm         1.5hrs
                 9:00-10:30pm        1.5hrs
     11/13/24    4:30-6:00pm         1.5hrs
+    11/14/24    10:00-11:00am       1hrs
