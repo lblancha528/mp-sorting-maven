@@ -108,5 +108,5 @@ public class Quicksorter<T> implements Sorter<T> {
       } // if
     } // while
     return bigger;
-  }
+  } // sort(T[], int, int)
 } // class Quicksorter
