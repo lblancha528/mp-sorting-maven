@@ -56,6 +56,7 @@ public class SelectionSorter<T> implements Sorter<T> {
       T second = values[smallest];
       values[sorted] = second;
       values[smallest] = first;
+      sorted++;
     } // for
   } // sort(T[])
 
@@ -66,10 +67,10 @@ public class SelectionSorter<T> implements Sorter<T> {
   * @return int index of smallest element
   */
   public int findSmallest(T[] values, int start) {
-    int smallest = 0; // index of smallest element found
+    int smallest = start; // index of smallest element found
 
-    for (int j = i + 1; j < values.length; j++) {
-      if (order.compare(values[i], values[j]) == 0) {
+    for (int j = start + 1; j < values.length; j++) {
+      if (order.compare(values[smallest], values[j]) == 0) {
         // if equal, stop and return
         smallest = j;
         return smallest;
