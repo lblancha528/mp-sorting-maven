@@ -30,7 +30,8 @@ _This section is optional_
 * Quicksort index out of bounds when swapping?
 * Work log: 
     11/11/24    5:00-6:30pm         1.5hrs
-                9:00-10:30pm        1.5hrs
+    11/11/24    9:00-10:30pm        1.5hrs
     11/13/24    4:30-6:00pm         1.5hrs
     11/14/24    10:00-11:00am       1.0hrs
     11/15/24    4:30-5:00pm         0.5hrs
+    11/16/24    4:00-4:15pm         0.2hrs

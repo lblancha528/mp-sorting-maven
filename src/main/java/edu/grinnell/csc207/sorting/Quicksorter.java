@@ -74,7 +74,7 @@ public class Quicksorter<T> implements Sorter<T> {
    * @param T[] the array
    * @param int lower bound
    * @param int upper bound
-   * @return the last index of the smaller range
+   * @return the index before the bigger range
    */
   public int sort(T[] values, int lower, int upper) {
     int smaller = lower; // next index to place a smaller element at
@@ -82,8 +82,8 @@ public class Quicksorter<T> implements Sorter<T> {
     int current = lower; // index of next unsorted element
 
     Random rand = new Random();
-    int randomNum = rand.nextInt(upper - lower);
-    T pivot = values[randomNum + lower]; // value of the pivot
+    int randomNum = rand.nextInt(upper - lower); // index of pivot
+    T pivot = values[randomNum + lower]; // value of pivot
 
     while (current <= bigger) {
       if (order.compare(values[current], pivot) < 0) {
