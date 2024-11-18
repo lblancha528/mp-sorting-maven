@@ -77,7 +77,6 @@ public class Quicksorter<T> implements Sorter<T> {
    * @return the index before the bigger range
    */
   public int sort(T[] values, int lower, int upper) {
-    int smaller = lower; // next index to place a smaller element at
     int bigger = upper; // next index to place a bigger element at
     int current = lower; // index of next unsorted element
 
@@ -85,14 +84,15 @@ public class Quicksorter<T> implements Sorter<T> {
     int randomNum = rand.nextInt(upper - lower); // index of pivot
     T pivot = values[randomNum + lower]; // value of pivot
 
+    // put pivot at front
+    T pvt = values[randomNum + lower];
+    T zro = values[lower];
+    values[randomNum + lower] = zro;
+    values[lower] = pvt;
+
     while (current <= bigger) {
-      if (order.compare(values[current], pivot) < 0) {
+      if (order.compare(values[current], pivot) <= 0) {
         // if element is smaller than pivot, put in smaller section
-        T first = values[current];
-        T second = values[smaller];
-        values[current] = second;
-        values[smaller] = first;
-        smaller++;
         current++;
       } else if (order.compare(values[current], pivot) > 0) {
         // if element is bigger than pivot, put in bigger section
@@ -102,11 +102,15 @@ public class Quicksorter<T> implements Sorter<T> {
         values[bigger] = first;
         bigger--;
         current++;
-      } else {
-        // else, element is equal, inc current
-        current++;
       } // if
     } // while
+
+    // put pivot in place
+    T pvt2 = values[bigger];
+    T zro2 = values[lower];
+    values[bigger] = zro2;
+    values[lower] = pvt2;
+
     return bigger;
   } // sort(T[], int, int)
 } // class Quicksorter
