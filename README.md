@@ -16,6 +16,7 @@ Acknowledgements
 * 11/13/24: <https://www.geeksforgeeks.org/merge-sort/#implementation-of-merge-sort> attempt two at merge sort.
 *           MP7, partners Tiffany Yan and Natalie Nardone, on how to generate a random number.
 * 11/17/24: Maria and Audrey, help lamenting over Quicksort
+* 11/20/24: Audrey, help implementing SamR's suggestions
 
 This code may be found at <https://github.com/lblancha528/mp-sorting-maven>. The original code may be found at <https://github.com/Grinnell-CSC207/mp-sorting-maven>.
 
@@ -37,3 +38,4 @@ _This section is optional_
     11/15/24    4:30-5:00pm         0.5hrs
     11/16/24    4:00-4:15pm         0.2hrs
     11/17/24    7:00-8:30pm         1.5hrs
+    11/20/24    9:40-10:00pm        0.3hrs
