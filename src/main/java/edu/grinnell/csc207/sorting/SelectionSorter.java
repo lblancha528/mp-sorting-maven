@@ -61,11 +61,12 @@ public class SelectionSorter<T> implements Sorter<T> {
   } // sort(T[])
 
   /**
-  * Finds the next smallest element in the array.
-  * @param T[] the array to be searched
-  * @param int the 
-  * @return int index of smallest element
-  */
+   * Finds the next smallest element in the array.
+   *
+   * @param values the array to be searched
+   * @param start the starting index
+   * @return index of smallest element
+   */
   public int findSmallest(T[] values, int start) {
     int smallest = start; // index of smallest element found
 
@@ -82,5 +83,5 @@ public class SelectionSorter<T> implements Sorter<T> {
 
     return smallest;
   } // findSmallest(T[], int)
-  
+
 } // class SelectionSorter

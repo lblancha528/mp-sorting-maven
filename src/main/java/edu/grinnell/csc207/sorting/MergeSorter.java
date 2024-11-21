@@ -54,12 +54,11 @@ public class MergeSorter<T> implements Sorter<T> {
 
   /**
    * Merge helper. Partitions sections.
-   * 
+   *
    * @param start1 start of section 1
-   * @param start2 start of section 2
    * @param mid the midpoint
    * @param end the endpoint
-   * @param T[] the array
+   * @param values the array
    */
   public void mergeHelper(int start1, int mid, int end, T[] values) {
 
@@ -114,7 +113,7 @@ public class MergeSorter<T> implements Sorter<T> {
 
   /**
    * Tracks left and right index bounds for subsections.
-   * 
+   *
    * @param values the array
    * @param l the left bound of array
    * @param r the right bound of array

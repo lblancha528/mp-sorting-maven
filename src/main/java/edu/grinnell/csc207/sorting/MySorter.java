@@ -5,15 +5,15 @@ import java.util.Random;
 import edu.grinnell.csc207.util.ArrayUtils;
 
 /**
- * Something that sorts using Quicksort.
+ * Something that sorts using version of Quicksort with an improved pivot, ie pivot is the average
+ * of 3 random indices within range.
  *
- * @param <T> The types of values that are sorted.
+ * @param <T> the type of values to be sorted
  *
- * @author Samuel A. Rebelsky
  * @author Lily Blanchard
+ * @author Samuel Rebelsky Based on Quicksorter framework written by SamR
  */
-
-public class Quicksorter<T> implements Sorter<T> {
+public class MySorter<T> implements Sorter<T> {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -37,7 +37,7 @@ public class Quicksorter<T> implements Sorter<T> {
    *
    * @param comparator The order in which elements in the array should be ordered after sorting.
    */
-  public Quicksorter(Comparator<? super T> comparator) {
+  public MySorter(Comparator<? super T> comparator) {
     this.order = comparator;
   } // Quicksorter(Comparator)
 
@@ -90,11 +90,15 @@ public class Quicksorter<T> implements Sorter<T> {
       return lower;
     } // if only sorting one element
 
-    int randomNum = rand.nextInt(upper - lower - 1); // index of pivot, cannot be upper
-    T pivot = values[randomNum + lower]; // value of pivot
+    // three indices to be averaged, cannot be upper
+    int randomNum1 = rand.nextInt(upper - lower - 1);
+    int randomNum2 = rand.nextInt(upper - lower - 1);
+    int randomNum3 = rand.nextInt(upper - lower - 1);
+    int pivotIndex = (randomNum1 + randomNum2 + randomNum3) / 3;
+    T pivot = values[pivotIndex]; // value of pivot
 
     // put pivot at front
-    ArrayUtils.swap(values, randomNum + lower, lower);
+    ArrayUtils.swap(values, pivotIndex, lower);
 
     while (current <= bigger) {
       if (order.compare(values[current], pivot) <= 0) {
